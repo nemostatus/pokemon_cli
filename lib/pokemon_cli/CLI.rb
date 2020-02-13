@@ -33,6 +33,9 @@ def pokemon_list
       choice
   end
   
+  def bye 
+    puts "Enjoy your journey and try to catch 'em all!"
+  end 
    
   
 end 

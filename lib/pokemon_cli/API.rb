@@ -6,5 +6,10 @@ class API
       Pokemon.new(pokemon)
     end 
   end 
+  def self.stat_data(url)
+    response = RestClient.get("#{url}")
+    pokemon_stats = JSON.parse(response.body)["#{stat}"]
+    
+ end 
  end 
    
