@@ -39,7 +39,20 @@ def pokemon_list
     stat = gets.strip.downcase
    API.more_data(name,stat)
   Pokemon.stats.each do |poke|
+    case stat
+    when "types"
     puts poke.type 
+    when "abilities"
+    puts poke.ability 
+    when "moves"
+      puts poke.move 
+    when "base_experience"
+     puts poke 
+    when "height"
+     puts poke 
+    when "Weight"
+      puts poke 
+    end 
   end
   end
    
