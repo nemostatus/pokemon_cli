@@ -12,8 +12,8 @@ class PokemonCli::CLI
     input = gets.strip.downcase
     if input == "pokedex"
       pokemon_list
-      choice
-      elsif input == "exit"
+     choice
+  elsif input == "exit"
       bye
     else 
       invalid_entry
@@ -21,15 +21,15 @@ class PokemonCli::CLI
 end 
 
 def pokemon_list
-  
- Pokemon.all.each_with_index do |pokemon,index|
+  Pokemon.all.each_with_index do |pokemon,index|
       puts "#{index + 1}. #{pokemon.name}"
      end 
    puts ""
    puts ""
     pokemon_stats
-   choice
+   second_choice
    end
+   
    def pokemon_stats 
       puts "Which pokemon would you like to know about?"
       puts "Please enter number or name of pokemon."
@@ -39,6 +39,9 @@ def pokemon_list
     stat_list
     stat = gets.strip.downcase
    API.more_data(name,stat)
+   if stat == "weight" 
+     puts  API.more_data(name,stat)
+   else
   Pokemon.stats.each do |poke|
     case stat
     when "types"
@@ -55,7 +58,9 @@ def pokemon_list
       puts poke["name"] 
     end 
   end
-  end
+end
+end
+  
    
     def stat_list
 puts "1. Abilities
@@ -65,6 +70,20 @@ puts "1. Abilities
     5.Moves
     6.Types"
    end 
+   
+   def second_choice 
+     puts "Would you like to learn about more pokemon?"
+     puts "y/n"
+     input = gets.strip.downcase 
+     if input == "y"
+       pokemon_list 
+    elsif input == "n"
+    bye
+    exit
+   else 
+   second_choice
+ end 
+ end 
 
 def invalid_entry
     puts "Invalid pokedex entry."
@@ -75,5 +94,5 @@ def invalid_entry
     puts "Enjoy your journey and try to catch 'em all!"
   end 
    
-  
+
 end 
