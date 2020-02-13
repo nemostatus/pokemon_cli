@@ -1,10 +1,9 @@
 class PokemonCli::CLI
-  def call 
+  def start 
     puts "Welcome pokemon trainer!!"
     puts "To use your pokedex and view a pokemon enter: 'pokedex'."
     puts "To continue on your adventure enter 'exit'."
-    API.get_data
-    menu
+   menu
   end 
   
   def menu
@@ -21,7 +20,7 @@ end
 
 
 def pokemon_list
-  
+  API.get_data
   Pokemon.all.each_with_index do |pokemon,index|
       puts "#{index + 1}. #{pokemon.name}"
      end 
@@ -81,7 +80,7 @@ puts "1. Abilities
      if input == "yes"
       Pokemon.all.clear
       Pokemon.stats.clear
-     call
+     pokemon_list
     elsif input == "exit"
     bye
     exit
