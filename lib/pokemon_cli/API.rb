@@ -6,9 +6,12 @@ class API
       Pokemon.new(pokemon)
     end 
   end 
-  def self.stat_data(url)
-    response = RestClient.get("#{url}")
+  def self.more_data(name,stat)
+    response = RestClient.get("https://pokeapi.co/api/v2/pokemon/#{name}/")
     pokemon_stats = JSON.parse(response.body)["#{stat}"]
+    pokemon_stats.each do |pokemon|
+      Pokemon.new(pokemon)
+    end
     
  end 
  end 

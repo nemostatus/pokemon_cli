@@ -23,12 +23,33 @@ def pokemon_list
   
  Pokemon.all.each_with_index do |pokemon,index|
       puts "#{index + 1}. #{pokemon.name}"
-    end 
+     end 
    puts ""
    puts ""
- end 
- 
-  def invalid_entry
+    pokemon_stats
+   choice
+   end
+   def pokemon_stats 
+      puts "Which pokemon would you like to know about?"
+      puts "Please enter number or name of pokemon."
+    name = gets.strip.downcase
+    puts "Which stats would you like to know?"
+    puts "Please enter by keyword."
+    stat_list
+    stat = gets.strip.downcase
+   puts API.more_data(name,stat)
+   end 
+   
+    def stat_list
+puts "1. Abilities
+    2.Base_experience(xp gained for defeating this pokemon)
+    3.Weight(hectograms)
+    4.Height(decimetres)
+    5.Moves
+    6.Types"
+   end 
+
+def invalid_entry
     puts "Invalid pokedex entry."
       choice
   end
