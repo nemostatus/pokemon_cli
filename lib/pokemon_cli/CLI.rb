@@ -1,19 +1,17 @@
-
 class PokemonCli::CLI
   def call 
     puts "Welcome pokemon trainer!!"
     puts "To use your pokedex and view a pokemon enter: 'pokedex'."
     puts "To continue on your adventure enter 'exit'."
     API.get_data
-    choice
+    menu
   end 
   
-  
-   def choice
+  def menu
     input = gets.strip.downcase
     if input == "pokedex"
       pokemon_list
-     choice
+     menu
   elsif input == "exit"
       bye
     else 
@@ -30,7 +28,7 @@ def pokemon_list
    puts ""
    puts ""
     pokemon_stats
-   second_choice
+  choice
    end
    
    
@@ -76,17 +74,19 @@ puts "1. Abilities
    end 
    
    
-   def second_choice 
+   def choice 
      puts "Would you like to learn about more pokemon?"
      puts "yes/exit"
      input = gets.strip.downcase 
      if input == "yes"
-     pokemon_stats
+      Pokemon.all.clear
+      Pokemon.stats.clear
+     call
     elsif input == "exit"
     bye
     exit
    else 
-   second_choice
+   choice
  end 
  end 
 

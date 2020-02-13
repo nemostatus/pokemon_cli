@@ -9,7 +9,6 @@ attr_accessor :name,:type,:move,:ability
       self.send("#{k}=",v) if self.respond_to?("#{k}=")
   end 
   save 
-  
 end 
 
 def save 
