@@ -22,11 +22,7 @@ end
 def self.all 
   @@all
 end 
-def self.find_by_name(name,stat)
-  self.stats.select do |pokemon| 
-    pokemon.name.downcase == name 
-    
-     end 
-end 
+
+ 
 end 
 

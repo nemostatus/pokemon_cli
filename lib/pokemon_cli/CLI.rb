@@ -1,3 +1,4 @@
+
 class PokemonCli::CLI
   def call 
     puts "Welcome pokemon trainer!!"
