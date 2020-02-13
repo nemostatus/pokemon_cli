@@ -4,10 +4,11 @@ class PokemonCli::CLI
     puts "Welcome pokemon trainer!!"
     puts "To use your pokedex and view a pokemon enter: 'pokedex'."
     puts "To continue on your adventure enter 'exit'."
-    
     API.get_data
     choice
   end 
+  
+  
    def choice
     input = gets.strip.downcase
     if input == "pokedex"
@@ -20,6 +21,7 @@ class PokemonCli::CLI
   end 
 end 
 
+
 def pokemon_list
   Pokemon.all.each_with_index do |pokemon,index|
       puts "#{index + 1}. #{pokemon.name}"
@@ -29,6 +31,7 @@ def pokemon_list
     pokemon_stats
    second_choice
    end
+   
    
    def pokemon_stats 
       puts "Which pokemon would you like to know about?"
