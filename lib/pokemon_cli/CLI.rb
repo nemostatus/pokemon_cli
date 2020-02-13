@@ -5,7 +5,19 @@ class PokemonCli::CLI
     puts "To continue on your adventure enter 'exit'."
     
     API.get_data
+    choice
   end 
+   def choice
+    input = gets.strip.downcase
+    if input == "pokedex"
+      pokemon_list
+      choice
+      elsif input == "exit"
+      bye
+    else 
+      invalid_entry
+  end 
+end 
   
    
   
