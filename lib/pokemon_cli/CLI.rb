@@ -18,6 +18,20 @@ class PokemonCli::CLI
       invalid_entry
   end 
 end 
+
+def pokemon_list
+  
+ Pokemon.all.each_with_index do |pokemon,index|
+      puts "#{index + 1}. #{pokemon.name}"
+    end 
+   puts ""
+   puts ""
+ end 
+ 
+  def invalid_entry
+    puts "Invalid pokedex entry."
+      choice
+  end
   
    
   
