@@ -41,17 +41,17 @@ def pokemon_list
   Pokemon.stats.each do |poke|
     case stat
     when "types"
-    puts poke.type 
+    puts poke.type["name"]
     when "abilities"
-    puts poke.ability 
+    puts poke.ability["name"]
     when "moves"
-      puts poke.move 
+      puts poke.move["name"] 
     when "base_experience"
-     puts poke 
+     puts poke["name"] 
     when "height"
-     puts poke 
+     puts poke["name"]
     when "Weight"
-      puts poke 
+      puts poke["name"] 
     end 
   end
   end
