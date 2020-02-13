@@ -38,9 +38,10 @@ def pokemon_list
     stat_list
     stat = gets.strip.downcase
    API.more_data(name,stat)
-  binding.pry
-   
- end
+  Pokemon.stats.each do |poke|
+    puts poke.type 
+  end
+  end
    
     def stat_list
 puts "1. Abilities

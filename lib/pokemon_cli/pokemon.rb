@@ -1,6 +1,6 @@
 class Pokemon 
 
-attr_accessor :name,:move
+attr_accessor :name,:type
   
   @@all = []
   @@stats = []

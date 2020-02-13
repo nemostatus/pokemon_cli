@@ -10,7 +10,8 @@ class API
     response = RestClient.get("https://pokeapi.co/api/v2/pokemon/#{name}/")
     pokemon_stats = JSON.parse(response.body)["#{stat}"]
     pokemon_stats.each do |pokemon|
-      Pokemon.stats << pokemon
+      Pokemon.stats << Pokemon.new(pokemon)
+      
     end
     
  end 
