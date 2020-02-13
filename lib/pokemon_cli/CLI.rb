@@ -15,6 +15,7 @@ class PokemonCli::CLI
       bye
     else 
       invalid_entry
+      menu
   end 
 end 
 
@@ -90,7 +91,7 @@ stats.each.with_index do |stat,index|
 
 def invalid_entry
     puts "Invalid pokedex entry."
-      choice
+     menu
   end
   
   def bye 
