@@ -23,6 +23,7 @@ end
 
 
 def pokemon_list
+  
   Pokemon.all.each_with_index do |pokemon,index|
       puts "#{index + 1}. #{pokemon.name}"
      end 
@@ -74,13 +75,14 @@ puts "1. Abilities
     6.Types"
    end 
    
+   
    def second_choice 
      puts "Would you like to learn about more pokemon?"
-     puts "y/n"
+     puts "yes/exit"
      input = gets.strip.downcase 
-     if input == "y"
-       pokemon_list 
-    elsif input == "n"
+     if input == "yes"
+     pokemon_stats
+    elsif input == "exit"
     bye
     exit
    else 
