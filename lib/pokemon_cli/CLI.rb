@@ -37,8 +37,10 @@ def pokemon_list
     puts "Please enter by keyword."
     stat_list
     stat = gets.strip.downcase
-   puts API.more_data(name,stat)
-   end 
+   API.more_data(name,stat)
+  binding.pry
+   
+ end
    
     def stat_list
 puts "1. Abilities

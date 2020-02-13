@@ -1,6 +1,6 @@
 class Pokemon 
 
-attr_accessor :name,:url 
+attr_accessor :name,:move
   
   @@all = []
   @@stats = []
@@ -15,6 +15,9 @@ end
 def save 
   @@all << self 
 end 
+def self.stats 
+  @@stats
+end
 
 def self.all 
   @@all
