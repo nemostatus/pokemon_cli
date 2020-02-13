@@ -13,6 +13,8 @@ class API
      puts  pokemon_stats = JSON.parse(response.body)["#{stat}"]
       elsif stat == "height"
        puts pokemon_stats = JSON.parse(response.body)["#{stat}"]
+       elsif stat == "base_experience"
+       puts pokemon_stats = JSON.parse(response.body)["#{stat}"]
     else
     pokemon_stats.each do |pokemon|
       Pokemon.stats << Pokemon.new(pokemon)
