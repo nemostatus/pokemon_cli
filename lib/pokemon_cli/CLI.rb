@@ -62,13 +62,14 @@ end
   
    
     def stat_list
-puts "1. Abilities
-    2.Base_experience(xp gained for defeating this pokemon)
-    3.Weight(hectograms)
-    4.Height(decimetres)
-    5.Moves
-    6.Types"
+ stats =[ "Abilities",
+"Base_experience(xp gained for defeating this pokemon)",
+"Weight(hectograms)",
+"Height(decimetres)","Moves","Types"]
+stats.each.with_index do |stat,index|
+  puts "#{index + 1}. #{stat}"
    end 
+ end 
    
    
    def choice 
