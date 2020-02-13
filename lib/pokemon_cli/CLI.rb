@@ -40,9 +40,7 @@ def pokemon_list
     stat_list
     stat = gets.strip.downcase
    API.more_data(name,stat)
-   if stat == "weight" 
-     puts  API.more_data(name,stat)
-   else
+   
   Pokemon.stats.each do |poke|
     case stat
     when "types"
@@ -60,7 +58,7 @@ def pokemon_list
     end 
   end
 end
-end
+
   
    
     def stat_list
