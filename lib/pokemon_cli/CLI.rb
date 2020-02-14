@@ -35,7 +35,17 @@ def pokemon_list
    def pokemon_stats 
       puts "Which pokemon would you like to know about?"
       puts "Please enter number or name of pokemon."
+    keep_going = true
+      while keep_going
     name = gets.strip.downcase
+   Pokemon.all.each do |x|
+     if name == x.name 
+      
+       keep_going = false 
+    
+      end 
+   end 
+ end
     puts "Which stats would you like to know?"
     puts "Please enter by keyword."
     stat_list
