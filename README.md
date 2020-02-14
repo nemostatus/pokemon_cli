@@ -1,11 +1,9 @@
 # PokemonCli
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/pokemon_cli`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome! Thank you for checking out my gem! After all the appropriate gems listed on line 6 are installed and ./bin/executable is entered my pokemon CLI will ask you if would like to view your pokedex. If it's chosen then it will make an API call to the pokeAPI and get the pokemon data, unfortunately the endpoint lists only the pokemon name and pokemon url so it wasn't so easy to get all the attributes of the pokemon. Anyway my CLI then lists all of the pokemon names. Once chosen it then asks which stats you would like to see. I use this information to plug into a 2nd more flexible API call and it lists all of the data accordingly. So basically you are able to choose the pokemon and the specific data you would like. I hope you like using my Pokemon CLI. ENJOY!!
 
 ## Installation
-
+IMPORTANT: ALL GEMS REQUIRED BEFORE THE CLI CAN RUN: json and rest-client, enter gem install 'gemname' into terminal.
 Add this line to your application's Gemfile:
 
 ```ruby
@@ -20,7 +18,7 @@ Or install it yourself as:
 
     $ gem install pokemon_cli
     
-    IMPORTANT: ALL GEMS REQUIRED BEFORE THE CLI CAN RUN: json and rest-client
+    
 
 ## Usage
 
