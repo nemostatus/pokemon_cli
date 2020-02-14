@@ -4,6 +4,7 @@ Welcome! Thank you for checking out my gem! After all the appropriate gems liste
 
 ## Installation
 IMPORTANT: ALL GEMS REQUIRED BEFORE THE CLI CAN RUN: json and rest-client, enter gem install 'gemname' into terminal.
+After both gems are installed enter ./bin/executable into terminal
 Add this line to your application's Gemfile:
 
 ```ruby
