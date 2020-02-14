@@ -2,6 +2,18 @@
 
 Welcome! Thank you for checking out my gem! After all the appropriate gems listed on line 6 are installed and ./bin/executable is entered my pokemon CLI will ask you if would like to view your pokedex. If it's chosen then it will make an API call to the pokeAPI and get the pokemon data, unfortunately the endpoint lists only the pokemon name and pokemon url so it wasn't so easy to get all the attributes of the pokemon. Anyway my CLI then lists all of the pokemon names. Once chosen it then asks which stats you would like to see. I use this information to plug into a 2nd more flexible API call and it lists all of the data accordingly. So basically you are able to choose the pokemon and the specific data you would like. I hope you like using my Pokemon CLI. ENJOY!!
 
+This is the structure
+
+                                                     |--- moves--- lists multiple moves of selected pokemon
+                                                     |--- types - lists a few types 
+                                                     |--- base xp -- lists experience gained when selexted pokemon is defeated
+pokedex ---- list of pokemon names- (20)name choice -|--- weight -- weight measured in hectograms
+exit -end                                            |--- height -- height measured in decimeters
+                                                     |--- abilities -- lists all abilities of pokemon
+                                                     
+ After selected stats are listed the user is asked if he wants to see more pokemon and stats and is brought back list of pokemon names if yes is selected.                                                    
+                                                     
+
 ## Installation
 IMPORTANT: ALL GEMS REQUIRED BEFORE THE CLI CAN RUN: json and rest-client, enter gem install 'gemname' into terminal.
 After both gems are installed enter ./bin/executable into terminal
