@@ -49,8 +49,18 @@ def pokemon_list
     puts "Which stats would you like to know?"
     puts "Please enter by keyword."
     stat_list
+    continue = true
+    while continue 
     stat = gets.strip.downcase
+    array = [ "abilities","base_experience","weight","height","moves","types"]
+    array.each do |x|
+      if stat == x
+        continue = false
+      end 
+    end
+  end 
    API.more_data(name,stat)
+
    
   Pokemon.stats.each do |poke|
     case stat
