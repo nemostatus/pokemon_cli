@@ -19,6 +19,8 @@ And then execute:
 Or install it yourself as:
 
     $ gem install pokemon_cli
+    
+    IMPORTANT: ALL GEMS REQUIRED BEFORE THE CLI CAN RUN: json and rest-client
 
 ## Usage
 
