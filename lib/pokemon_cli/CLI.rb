@@ -34,7 +34,7 @@ def pokemon_list
    
    def pokemon_stats 
       puts "Which pokemon would you like to know about?"
-      puts "Please enter the name of pokemon."
+      puts "Please enter the name of a pokemon."
     keep_going = true
       while keep_going
     name = gets.strip.downcase
