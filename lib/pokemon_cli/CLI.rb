@@ -14,7 +14,7 @@ class PokemonCli::CLI
   elsif input == "exit"
       bye
     else 
-      invalid_entry
+     puts "Invalid pokedex entry."
       menu
   end 
 end 
@@ -42,7 +42,7 @@ def pokemon_list
      if name == x.name 
       
        keep_going = false 
-    
+   
       end 
    end 
  end
@@ -109,12 +109,7 @@ stats.each.with_index do |stat,index|
  end 
  end 
 
-def invalid_entry
-    puts "Invalid pokedex entry."
-     menu
-  end
-  
-  def bye 
+def bye 
     puts "Enjoy your journey and try to catch 'em all!"
   end 
    
