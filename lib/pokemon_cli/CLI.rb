@@ -10,7 +10,7 @@ class PokemonCli::CLI
     input = gets.strip.downcase
     if input == "pokedex"
       pokemon_list
-     menu
+     
   elsif input == "exit"
       bye
     else 
