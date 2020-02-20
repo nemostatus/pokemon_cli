@@ -1,4 +1,8 @@
 class PokemonCli::CLI
+  @@poke_stats = [ "abilities","base_experience","weight","height","moves","types"]
+  def self.poke_stats
+    @@poke_stats
+  end
   def start 
     puts "Welcome pokemon trainer!!"
     puts "To use your pokedex and view a pokemon enter: 'pokedex'."
@@ -53,8 +57,7 @@ def pokemon_list
     continue = true
     while continue 
     stat = gets.strip.downcase
-    array = [ "abilities","base_experience","weight","height","moves","types"]
-    array.each do |x|
+    PokemonCli::CLI.poke_stats.each do |x|
       if stat == x
         continue = false
       end 
@@ -84,11 +87,7 @@ end
   
    
     def stat_list
- stats =[ "Abilities",
-"Base_experience(xp gained for defeating this pokemon)",
-"Weight(hectograms)",
-"Height(decimetres)","Moves","Types"]
-stats.each.with_index do |stat,index|
+PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
   puts "#{index + 1}. #{stat}"
    end 
  end 
