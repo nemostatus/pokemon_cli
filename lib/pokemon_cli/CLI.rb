@@ -88,6 +88,7 @@ Pokemon.stats.each do |poke|
     when "moves"
      puts poke.move["name"] 
     when "base_experience"
+      PokemonCli::CLI.pokemon_battle.clear
       puts ""
      puts poke["name"] 
      when "height"
