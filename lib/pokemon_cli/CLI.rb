@@ -65,8 +65,7 @@ def pokemon_stats
  puts ""
     puts "Which stats would you like to know?"
     puts "Please enter by keyword."
-    puts ""
-    stat_list
+   stat_list
     continue = true
     while continue 
     stat = gets.strip.downcase
@@ -131,17 +130,23 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
      Pokemon.stats.each do |a|
     case stat
     when "types"
+      puts ""
     puts a.type["name"]
     when "abilities"
+      puts ""
     puts a.ability["name"]
     when "moves"
+      puts ""
       puts a.move["name"] 
     when "base_experience"
         PokemonCli::CLI.pokemon_battle.clear
+        puts ""
      puts a["name"] 
     when "height"
+      puts ""
      puts a["name"]
     when "Weight"
+      puts ""
       puts a["name"] 
       end 
   end
