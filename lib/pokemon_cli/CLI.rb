@@ -96,7 +96,7 @@ stats.each.with_index do |stat,index|
    
    def choice 
      puts "Would you like to learn more stats about this pokemon,Pokemon list or exit?"
-     puts "stats/Pokemon list/exit"
+     puts " stats/list/exit"
      input = gets.strip.downcase 
      if input == "stats"
       stat_list
@@ -126,6 +126,9 @@ stats.each.with_index do |stat,index|
  elsif input == "exit"
     bye
     exit
+    elsif input == "list"
+    Pokemon.all.clear
+    pokemon_list
    else 
    choice
  end 
