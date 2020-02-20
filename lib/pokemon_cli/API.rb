@@ -10,10 +10,12 @@ class API
     response = RestClient.get("https://pokeapi.co/api/v2/pokemon/#{name}/")
     pokemon_stats = JSON.parse(response.body)["#{stat}"]
     if stat == "weight" 
+     
      puts  pokemon_stats = JSON.parse(response.body)["#{stat}"]
       elsif stat == "height"
        puts pokemon_stats = JSON.parse(response.body)["#{stat}"]
        elsif stat == "base_experience"
+         PokemonCli::CLI.pokemon_battle << JSON.parse(response.body)["#{stat}"]
        puts pokemon_stats = JSON.parse(response.body)["#{stat}"]
     else
     pokemon_stats.each do |pokemon|

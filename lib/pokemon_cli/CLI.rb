@@ -1,8 +1,12 @@
 class PokemonCli::CLI
   @@poke_stats = [ "abilities","base_experience","weight","height","moves","types"]
+  @@pokemon_battle = []
   def self.poke_stats
     @@poke_stats
   end
+  def self.pokemon_battle
+    @@pokemon_battle
+  end 
   def start 
     puts "Welcome pokemon trainer!!"
     puts "To use your pokedex and view a pokemon enter: 'pokedex'."
@@ -118,6 +122,7 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
     when "moves"
       puts a.move["name"] 
     when "base_experience"
+        PokemonCli::CLI.pokemon_battle.clear
      puts a["name"] 
     when "height"
      puts a["name"]
@@ -145,20 +150,24 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
    pokemon_1 = gets.strip.downcase
    puts "I choose you #{pokemon_1}!!"
    name = pokemon_1
-   stat = "base_experience"
-   poke_1=API.more_data(name,stat)
+   stat = "base_experience"  
+  API.more_data(name,stat)
    puts "Select your second Pokemon!"
    pokemon_2 = gets.strip.downcase 
    puts "I choose you #{pokemon_2}!!"
    name = pokemon_2
    stat = "base_experience"
-  poke_2=API.more_data(name,stat)
-  if poke_1.to_i > poke_2.to_i
+  API.more_data(name,stat)
+  if  PokemonCli::CLI.pokemon_battle[0] >  PokemonCli::CLI.pokemon_battle[1]
     puts "#{pokemon_1} is the winner !!"
   else 
-    puts "#{pokemon_1} is the winner !!"
+    puts "#{pokemon_2} is the winner !!"
   end   
+
+
 end
+
+ 
  
   
 def bye 
