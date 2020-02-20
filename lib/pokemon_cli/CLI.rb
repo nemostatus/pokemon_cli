@@ -229,11 +229,11 @@ def final_choice
   exit 
 else 
   puts "Invalid pokedex entry."
+  final_choice
   end 
 end 
 
- 
- def bye 
+def bye 
     puts "Enjoy your journey and try to catch 'em all!"
   end 
 end 
