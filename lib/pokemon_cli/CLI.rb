@@ -25,6 +25,9 @@ end
 
 
 def pokemon_list
+   Pokemon.all.clear
+   puts ""
+   puts ""
   API.get_data
   Pokemon.all.each_with_index do |pokemon,index|
       puts "#{index + 1}. #{pokemon.name}"
@@ -131,6 +134,7 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
       
     end 
   end
+  Pokemon.stats.clear
   choice
  
  
@@ -138,7 +142,7 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
     bye
     exit
     elsif input == "list"
-    Pokemon.all.clear
+   
     pokemon_list
    else 
    choice
