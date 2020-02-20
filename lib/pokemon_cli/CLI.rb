@@ -87,8 +87,10 @@ def pokemon_stats
     when "Weight"
       puts poke["name"] 
     end 
+    Pokemon.stats.clear
   end
 end
+ 
 
    def stat_list
 PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
