@@ -160,13 +160,30 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
   API.more_data(name,stat)
   if  PokemonCli::CLI.pokemon_battle[0] >  PokemonCli::CLI.pokemon_battle[1]
     puts "#{pokemon_1} is the winner !!"
+    final_choice
   else 
     puts "#{pokemon_2} is the winner !!"
-  end   
-
-
+    final_choice
+   
+end
 end
 
+def final_choice 
+     puts "Would you like to continue to battle,return to the pokemon list, or exit?"
+    puts "Choose one: battle/list/exit"
+    input = gets.strip.downcase 
+    if input == "battle"
+      PokemonCli::CLI.pokemon_battle.clear
+      pokemon_battle
+    elsif input == "list"
+    pokemon_list
+  elsif input == "exit"
+  bye 
+  exit 
+else 
+  puts "Invalid pokedex entry."
+  end 
+end 
  
  
   
