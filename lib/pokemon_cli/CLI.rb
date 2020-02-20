@@ -66,9 +66,7 @@ def pokemon_stats
     end
   end 
    API.more_data(name,stat)
-
-   
-  Pokemon.stats.each do |poke|
+Pokemon.stats.each do |poke|
     case stat
     when "types"
     puts poke.type["name"]
@@ -83,8 +81,8 @@ def pokemon_stats
     when "Weight"
       puts poke["name"] 
     end 
-    Pokemon.stats.clear
   end
+     Pokemon.stats.clear
 end
  def stat_list
 PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
@@ -125,18 +123,14 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
      puts a["name"]
     when "Weight"
       puts a["name"] 
-      
-    end 
+      end 
   end
   Pokemon.stats.clear
   choice
- 
- 
  elsif input == "exit"
     bye
     exit
     elsif input == "list"
-   
     pokemon_list
    else 
    choice
