@@ -1,5 +1,5 @@
 class PokemonCli::CLI
-  @@poke_stats = [ "abilities","base_experience(xp gained when defeated)","weight(hectograms)","height(decimetres)","moves","types"]
+  @@poke_stats = [ "abilities","base_experience","weight","height","moves","types"]
   def self.poke_stats
     @@poke_stats
   end
@@ -34,9 +34,8 @@ def pokemon_list
     pokemon_stats
   choice
    end
-   
-   
-   def pokemon_stats 
+  
+def pokemon_stats 
       puts "Which pokemon would you like to know about?"
       puts "Please enter the name of a pokemon."
     keep_going = true
@@ -74,9 +73,9 @@ def pokemon_list
     puts poke.ability["name"]
     when "moves"
       puts poke.move["name"] 
-    when "base_experience(xp gained when defeated)"
+    when "base_experience"
      puts poke["name"] 
-    when "height(decimetres)"
+    when "height"
      puts poke["name"]
     when "Weight(hectograms)"
       puts poke["name"] 
