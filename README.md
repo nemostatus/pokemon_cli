@@ -4,12 +4,12 @@ Welcome! Thank you for checking out my cli! After all the appropriate gems liste
 
 This is the structure of the cli :
 
-                                                     |--- moves--- lists multiple moves of selected pokemon
-                                                     |--- types - lists a few types 
-                                                     |--- base xp -- lists experience gained when selexted pokemon is defeated
-pokedex ---- list of pokemon names- (20)name choice -|--- weight -- weight measured in hectograms
-exit -end                                            |--- height -- height measured in decimeters
-                                                     |--- abilities -- lists all abilities of pokemon
+                                          |--- moves
+                                          |--- types 
+                                          |--- base xp
+pokedex ---list of pokemon names- choice -|--- weight-- stats loop/list loop/battle/or exit - loop or exit
+exit -end                                 |--- height
+                                          |--- abilities 
                                                      
  After selected stats are listed the user is asked if he wants to see more pokemon and stats and is brought back list of pokemon names if yes is selected.                                                    
                                                      
