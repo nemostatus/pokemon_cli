@@ -142,7 +142,7 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
     when "moves"
     puts a.move["name"] 
     when "base_experience"
-        PokemonCli::CLI.pokemon_battle.clear
+        
         puts ""
      puts a["name"] 
     when "height"
@@ -154,6 +154,7 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
       end 
   end
   Pokemon.stats.clear
+  PokemonCli::CLI.pokemon_battle.clear
   choice
  elsif input == "exit"
     bye
