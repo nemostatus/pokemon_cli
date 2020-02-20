@@ -95,6 +95,8 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
      puts " stats/list/exit"
      input = gets.strip.downcase 
      if input == "stats"
+       Pokemon.all.clear
+  Pokemon.stats.clear
       stat_list
    
       name = Pokemon.name_selection[0]
@@ -107,6 +109,7 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
       end 
     end
   end
+  
    API.more_data(name,stat)
      Pokemon.stats.each do |a|
     case stat
