@@ -161,7 +161,15 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
    stat = "base_experience"  
   API.more_data(name,stat)
    puts "Select your second Pokemon!"
+     continue = true
+    while continue
    pokemon_2 = gets.strip.downcase 
+    Pokemon.all.each do |x|
+     if pokemon_2 == x.name 
+       continue = false 
+     end 
+   end 
+ end
    puts "I choose you #{pokemon_2}!!"
    name = pokemon_2
    stat = "base_experience"
