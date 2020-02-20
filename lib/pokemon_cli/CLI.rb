@@ -108,7 +108,8 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
    def choice 
      puts ""
      puts "Would you like to learn more stats about this pokemon,simulate a Pokemon battle,see the Pokemon list or exit?"
-     puts "Enter one: stats/list/battle/exit"
+     puts "Choose one: stats/list/battle/exit"
+     puts ""
      input = gets.strip.downcase 
      if input == "stats"
       stat_list
@@ -163,6 +164,7 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
  end
  
  def pokemon_battle 
+   puts ""
    puts "Select 2 pokemon for a battle."
    puts "Select your first Pokemon!"
    continue = true
