@@ -1,5 +1,5 @@
 class PokemonCli::CLI
-  @@poke_stats = [ "abilities","base_experience","weight","height","moves","types"]
+  @@poke_stats = [ "abilities","base_experience(xp gained when defeated)","weight(hectograms)","height(decimetres)","moves","types"]
   def self.poke_stats
     @@poke_stats
   end
@@ -74,19 +74,17 @@ def pokemon_list
     puts poke.ability["name"]
     when "moves"
       puts poke.move["name"] 
-    when "base_experience"
+    when "base_experience(xp gained when defeated)"
      puts poke["name"] 
-    when "height"
+    when "height(decimetres)"
      puts poke["name"]
-    when "Weight"
+    when "Weight(hectograms)"
       puts poke["name"] 
     end 
   end
 end
 
-  
-   
-    def stat_list
+   def stat_list
 PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
   puts "#{index + 1}. #{stat}"
    end 
@@ -133,11 +131,7 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
  end 
  end
 
- 
-
 def bye 
     puts "Enjoy your journey and try to catch 'em all!"
   end 
-   
-
 end 
