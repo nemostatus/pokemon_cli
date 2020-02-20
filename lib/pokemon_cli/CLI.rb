@@ -122,6 +122,7 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
      puts a["name"]
     when "Weight"
       puts a["name"] 
+      
     end 
   end
   choice
