@@ -112,7 +112,7 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
      input = gets.strip.downcase 
      if input == "stats"
       stat_list
-   
+   Pokemon.stats.clear
    name = Pokemon.name_selection[0]
       continue = true 
       while continue 
