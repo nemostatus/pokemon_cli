@@ -88,7 +88,7 @@ Pokemon.stats.each do |poke|
     when "moves"
      puts poke.move["name"] 
     when "base_experience"
-      PokemonCli::CLI.pokemon_battle.clear
+      
       puts ""
      puts poke["name"] 
      when "height"
@@ -100,6 +100,7 @@ Pokemon.stats.each do |poke|
     end 
   end
      Pokemon.stats.clear
+     PokemonCli::CLI.pokemon_battle.clear
 end
  def stat_list
    puts ""
@@ -115,6 +116,7 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
      puts ""
      input = gets.strip.downcase 
      if input == "stats"
+       PokemonCli::CLI.pokemon_battle.clear
       stat_list
    Pokemon.stats.clear
    name = Pokemon.name_selection[0]
