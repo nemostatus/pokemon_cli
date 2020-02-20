@@ -41,7 +41,7 @@ def pokemon_stats
     keep_going = true
       while keep_going
     name = gets.strip.downcase
-    Pokemon.all.select.each do |x|
+    Pokemon.all.each do |x|
       if name == x.name 
    Pokemon.name_selection << name 
  end 
