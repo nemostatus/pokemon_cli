@@ -180,7 +180,7 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
    end 
  end 
  puts ""
-   puts "I choose you #{pokemon_1}!!"
+   puts "#{pokemon_1.capitalize},I choose you !!"
    name = pokemon_1
    stat = "base_experience"  
   API.more_data(name,stat)
@@ -197,7 +197,7 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
    end 
  end
  puts ""
-   puts "I choose you #{pokemon_2}!!"
+   puts "#{pokemon_2.capitalize},I choose you #{pokemon_2}!!"
    name = pokemon_2
    stat = "base_experience"
   API.more_data(name,stat)
