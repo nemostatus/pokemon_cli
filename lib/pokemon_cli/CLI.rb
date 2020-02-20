@@ -38,6 +38,7 @@ def pokemon_list
     keep_going = true
       while keep_going
     name = gets.strip.downcase
+   Pokemon.name_selection << name 
    Pokemon.all.each do |x|
      if name == x.name 
       
@@ -94,20 +95,43 @@ stats.each.with_index do |stat,index|
    
    
    def choice 
-     puts "Would you like to learn about more pokemon?"
-     puts "yes/exit"
+     puts "Would you like to learn more stats about this pokemon,Pokemon list or exit?"
+     puts "stats/Pokemon list/exit"
      input = gets.strip.downcase 
-     if input == "yes"
-      Pokemon.all.clear
+     if input == "stats"
+      stat_list
       Pokemon.stats.clear
-     pokemon_list
-    elsif input == "exit"
+      name = Pokemon.name_selection[0]
+     stat = gets.strip.downcase
+   API.more_data(name,stat)
+     Pokemon.stats.each do |a|
+    case stat
+    when "types"
+    puts a.type["name"]
+    when "abilities"
+    puts a.ability["name"]
+    when "moves"
+      puts a.move["name"] 
+    when "base_experience"
+     puts a["name"] 
+    when "height"
+     puts a["name"]
+    when "Weight"
+      puts a["name"] 
+    end 
+  end
+  choice
+ 
+ 
+ elsif input == "exit"
     bye
     exit
    else 
    choice
  end 
- end 
+ end
+
+ 
 
 def bye 
     puts "Enjoy your journey and try to catch 'em all!"

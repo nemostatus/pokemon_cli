@@ -1,7 +1,7 @@
 class Pokemon 
 
 attr_accessor :name,:type,:move,:ability
-  
+  @@name_selection =[]
   @@all = []
   @@stats = []
   def initialize(attr_hash)
@@ -16,6 +16,9 @@ def save
 end 
 def self.stats 
   @@stats
+end
+def self.name_selection 
+  @@name_selection
 end
 
 def self.all 
