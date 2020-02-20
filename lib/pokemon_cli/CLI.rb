@@ -98,7 +98,15 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
       stat_list
       Pokemon.stats.clear
       name = Pokemon.name_selection[0]
+      continue = true 
+      while continue 
      stat = gets.strip.downcase
+     PokemonCli::CLI.poke_stats.each do |x|
+      if stat == x
+        continue = false
+      end 
+    end
+  end
    API.more_data(name,stat)
      Pokemon.stats.each do |a|
     case stat
