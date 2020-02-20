@@ -43,7 +43,7 @@ def pokemon_list
 def pokemon_stats 
   puts ""
    puts "Which pokemon would you like to know about?"
-   puts ""
+
       puts "Please enter the name of a pokemon."
     keep_going = true
       while keep_going
@@ -66,6 +66,7 @@ def pokemon_stats
     puts "Which stats would you like to know?"
     puts "Please enter by keyword."
    stat_list
+   puts ""
     continue = true
     while continue 
     stat = gets.strip.downcase
@@ -82,10 +83,10 @@ Pokemon.stats.each do |poke|
       puts ""
     puts poke.type["name"]
     when "abilities"
-      puts ""
+      
     puts poke.ability["name"]
     when "moves"
-      puts ""
+     
       puts poke.move["name"] 
     when "base_experience"
       puts ""
@@ -104,6 +105,7 @@ end
    puts ""
 PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
   puts "#{index + 1}. #{stat}"
+
    end 
  end 
    def choice 
@@ -133,10 +135,10 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
       puts ""
     puts a.type["name"]
     when "abilities"
-      puts ""
+     
     puts a.ability["name"]
     when "moves"
-      puts ""
+    
       puts a.move["name"] 
     when "base_experience"
         PokemonCli::CLI.pokemon_battle.clear
@@ -224,8 +226,7 @@ def invalid
   puts "Invalid pokedex entry."
  end 
  
-  
-def bye 
+ def bye 
     puts "Enjoy your journey and try to catch 'em all!"
   end 
 end 
