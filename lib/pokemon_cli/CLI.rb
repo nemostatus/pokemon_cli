@@ -44,6 +44,7 @@ def pokemon_stats
     keep_going = true
       while keep_going
     name = gets.strip.downcase
+    invalid
     Pokemon.all.each do |x|
       if name == x.name 
    Pokemon.name_selection << name 
@@ -140,7 +141,7 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
     elsif input == "battle"
     pokemon_battle
    else 
-   choice
+   invalid
  end 
  end
  
@@ -197,10 +198,12 @@ def final_choice
   bye 
   exit 
 else 
-  puts "Invalid pokedex entry."
+  invalid
   end 
 end 
- 
+def invalid 
+  puts "Invalid pokedex entry."
+ end 
  
   
 def bye 
