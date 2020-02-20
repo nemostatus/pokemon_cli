@@ -26,14 +26,10 @@ end
 
 def pokemon_list
    Pokemon.all.clear
-   puts ""
-   puts ""
-  API.get_data
+ API.get_data
   Pokemon.all.each_with_index do |pokemon,index|
       puts "#{index + 1}. #{pokemon.name}"
      end 
-   puts ""
-   puts ""
     pokemon_stats
   choice
    end
@@ -90,15 +86,11 @@ def pokemon_stats
     Pokemon.stats.clear
   end
 end
- 
-
-   def stat_list
+ def stat_list
 PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
   puts "#{index + 1}. #{stat}"
    end 
  end 
-   
-   
    def choice 
      puts "Would you like to learn more stats about this pokemon,Pokemon list or exit?"
      puts " stats/list/exit"
