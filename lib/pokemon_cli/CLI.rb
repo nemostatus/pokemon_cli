@@ -91,7 +91,7 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
  end 
    def choice 
      puts "Would you like to learn more stats about this pokemon,Pokemon list or exit?"
-     puts " stats/list/exit"
+     puts " stats/list/battle/exit"
      input = gets.strip.downcase 
      if input == "stats"
       stat_list
@@ -132,11 +132,35 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
     exit
     elsif input == "list"
     pokemon_list
+    elsif input == "battle"
+    pokemon_battle
    else 
    choice
  end 
  end
-
+ 
+ def pokemon_battle 
+   puts "Select 2 pokemon for a battle."
+   puts "Select your first Pokemon!"
+   pokemon_1 = gets.strip.downcase
+   puts "I choose you #{pokemon_1}!!"
+   name = pokemon_1
+   stat = "base_experience"
+   poke_1=API.more_data(name,stat)
+   puts "Select your second Pokemon!"
+   pokemon_2 = gets.strip.downcase 
+   puts "I choose you #{pokemon_2}!!"
+   name = pokemon_2
+   stat = "base_experience"
+  poke_2=API.more_data(name,stat)
+  if poke_1.to_i > poke_2.to_i
+    puts "#{pokemon_1} is the winner !!"
+  else 
+    puts "#{pokemon_1} is the winner !!"
+  end   
+end
+ 
+  
 def bye 
     puts "Enjoy your journey and try to catch 'em all!"
   end 
