@@ -147,7 +147,15 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
  def pokemon_battle 
    puts "Select 2 pokemon for a battle."
    puts "Select your first Pokemon!"
+   continue = true
+    while continue 
    pokemon_1 = gets.strip.downcase
+   Pokemon.all.each do |x|
+     if pokemon_1 == x.name 
+       continue = false 
+     end 
+   end 
+ end 
    puts "I choose you #{pokemon_1}!!"
    name = pokemon_1
    stat = "base_experience"  
