@@ -29,6 +29,8 @@ end
 
 
 def pokemon_list
+  puts ""
+  puts ""
    Pokemon.all.clear
  API.get_data
   Pokemon.all.each_with_index do |pokemon,index|
@@ -39,7 +41,9 @@ def pokemon_list
    end
   
 def pokemon_stats 
-      puts "Which pokemon would you like to know about?"
+  puts ""
+   puts "Which pokemon would you like to know about?"
+   puts ""
       puts "Please enter the name of a pokemon."
     keep_going = true
       while keep_going
@@ -58,8 +62,10 @@ def pokemon_stats
       end 
    end 
  end
+ puts ""
     puts "Which stats would you like to know?"
     puts "Please enter by keyword."
+    puts ""
     stat_list
     continue = true
     while continue 
@@ -74,27 +80,35 @@ def pokemon_stats
 Pokemon.stats.each do |poke|
     case stat
     when "types"
+      puts ""
     puts poke.type["name"]
     when "abilities"
+      puts ""
     puts poke.ability["name"]
     when "moves"
+      puts ""
       puts poke.move["name"] 
     when "base_experience"
+      puts ""
      puts poke["name"] 
-    when "height"
+     when "height"
+       puts ""
      puts poke["name"]
     when "Weight"
+      puts ""
       puts poke["name"] 
     end 
   end
      Pokemon.stats.clear
 end
  def stat_list
+   puts ""
 PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
   puts "#{index + 1}. #{stat}"
    end 
  end 
    def choice 
+     puts ""
      puts "Would you like to learn more stats about this pokemon,simulate a Pokemon battle,Pokemon list or exit?"
      puts " stats/list/battle/exit"
      input = gets.strip.downcase 
