@@ -1,9 +1,18 @@
 # PokemonCli
 
-Welcome! Thank you for checking out my cli! After all the appropriate gems listed on l(README.md)  are installed and ./bin/executable is entered my pokemon CLI will ask you if you would like to view your pokedex. If it's chosen then it will make an API call to the pokeAPI and get the pokemon data, unfortunately the endpoint lists only the pokemon name and pokemon url so it wasn't so easy to get all the attributes of the pokemon. Anyway my CLI then lists all of the pokemon names. Once chosen it then asks which stats you would like to see. I use this information to plug into a 2nd more flexible API call and it lists all of the data accordingly. So basically you are able to choose the pokemon and the specific data you would like. After seeing the Pokemon stats you have the option to learn more about that selected Pokemon, see the Pokemon list again or have some fun and have a virtual Pokemon battle.  I hope you like using my Pokemon CLI. ENJOY!! See the legend on starting on line 5(README.md) for more details on Pokemon stats.
+Welcome! Thank you for checking out my cli! After all the appropriate gems listed on l(README.md)  are installed and ./bin/executable is entered my pokemon CLI will ask you if you would like to view your pokedex. If it's chosen then it will make an API call to the pokeAPI and get the pokemon data, unfortunately the endpoint lists only the pokemon name and pokemon url so it wasn't so easy to get all the attributes of the pokemon. Anyway my CLI then lists all of the pokemon names. Once chosen it then asks which stats you would like to see. I use this information to plug into a 2nd more flexible API call and it lists all of the data accordingly. So basically you are able to choose the pokemon and the specific data you would like. After seeing the Pokemon stats you have the option to learn more about that selected Pokemon, see the Pokemon list again or have some fun and have a virtual Pokemon battle(this battle is determined with Pokemon base experience). I hope you like using my Pokemon CLI. ENJOY!! See the legend on starting on line 5(README.md) for more details on Pokemon stats.
+
+STAT LEGEND: moves(list of Pokemon moves)
+             types(list of Pokemon types, a Pokemon can have more than one type)
+             base experience(This is the experience points gained when this Pokemon is defeated. It is relative to how strong a Pokemon is, the stronger it is the more points the pokemon trainer will earn)
+             weight(measured in hectograms)
+             height(measure in decimetres)
+             abilities()
+             
+            
 
 
-This is the structure of the cli :
+POKEMON CLI STRUCTURE:
 
                                           |--- moves
                                           |--- types 
