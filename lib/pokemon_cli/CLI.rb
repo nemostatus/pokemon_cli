@@ -221,8 +221,10 @@ def final_choice
     input = gets.strip.downcase 
     if input == "battle"
       PokemonCli::CLI.pokemon_battle.clear
+      
       pokemon_battle
     elsif input == "list"
+    PokemonCli::CLI.pokemon_battle.clear
     pokemon_list
   elsif input == "exit"
   bye 
