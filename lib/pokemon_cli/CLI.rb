@@ -41,7 +41,11 @@ def pokemon_stats
     keep_going = true
       while keep_going
     name = gets.strip.downcase
+    Pokemon.all.select.each do |x|
+      if name == x.name 
    Pokemon.name_selection << name 
+ end 
+ end
    Pokemon.all.each do |x|
      if name == x.name 
       
@@ -95,14 +99,13 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
      puts " stats/list/exit"
      input = gets.strip.downcase 
      if input == "stats"
-       Pokemon.all.clear
-  Pokemon.stats.clear
       stat_list
    
-      name = Pokemon.name_selection[0]
+   name = Pokemon.name_selection[0]
       continue = true 
       while continue 
      stat = gets.strip.downcase
+     Pokemon.stats.clear
      PokemonCli::CLI.poke_stats.each do |x|
       if stat == x
         continue = false
