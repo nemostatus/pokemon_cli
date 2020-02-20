@@ -21,12 +21,5 @@ class API
        end
   end  
  end
- def self.ability_data(name)
-   response = RestClient.get("https://pokeapi.co/api/v2/ability/#{name}")
-   pokemon_ability = JSON.pars(response.body)["effect"]
-   pokemon_ability.each do |poke|
-     Pokemon.ability << Pokemon.new(poke)
-   end 
- end 
- end 
+end
    
