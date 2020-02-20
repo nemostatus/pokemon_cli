@@ -77,7 +77,7 @@ def pokemon_stats
      puts poke["name"] 
     when "height"
      puts poke["name"]
-    when "Weight(hectograms)"
+    when "Weight"
       puts poke["name"] 
     end 
   end
