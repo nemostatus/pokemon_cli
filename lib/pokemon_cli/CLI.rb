@@ -15,6 +15,7 @@ class PokemonCli::CLI
   end 
   
   def menu
+    puts ""
     input = gets.strip.downcase
     if input == "pokedex"
       pokemon_list
@@ -43,8 +44,8 @@ def pokemon_list
 def pokemon_stats 
   puts ""
    puts "Which pokemon would you like to know about?"
-
-      puts "Please enter the name of a pokemon."
+puts "Please enter the name of a pokemon."
+puts ""
     keep_going = true
       while keep_going
     name = gets.strip.downcase
@@ -66,6 +67,7 @@ def pokemon_stats
     puts "Which stats would you like to know?"
     puts "Please enter by keyword."
    stat_list
+   puts ""
     continue = true
     while continue 
     stat = gets.strip.downcase
