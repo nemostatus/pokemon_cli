@@ -110,8 +110,8 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
  end 
    def choice 
      puts ""
-     puts "Would you like to learn more stats about this pokemon,simulate a Pokemon battle,Pokemon list or exit?"
-     puts " stats/list/battle/exit"
+     puts "Would you like to learn more stats about this pokemon,simulate a Pokemon battle,see the Pokemon list or exit?"
+     puts "Enter one: stats/list/battle/exit"
      input = gets.strip.downcase 
      if input == "stats"
       stat_list
@@ -132,7 +132,7 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
      Pokemon.stats.each do |a|
     case stat
     when "types"
-      puts ""
+      
     puts a.type["name"]
     when "abilities"
      
