@@ -162,7 +162,9 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
     elsif input == "battle"
     pokemon_battle
    else 
-   invalid
+  puts "Invalid pokedex entry."
+   
+   choice
  end 
  end
  
@@ -209,6 +211,7 @@ end
 def final_choice 
      puts "Would you like to continue to battle,return to the pokemon list, or exit?"
     puts "Choose one: battle/list/exit"
+    puts ""
     input = gets.strip.downcase 
     if input == "battle"
       PokemonCli::CLI.pokemon_battle.clear
@@ -219,12 +222,10 @@ def final_choice
   bye 
   exit 
 else 
-  invalid
+  puts "Invalid pokedex entry."
   end 
 end 
-def invalid 
-  puts "Invalid pokedex entry."
- end 
+
  
  def bye 
     puts "Enjoy your journey and try to catch 'em all!"
