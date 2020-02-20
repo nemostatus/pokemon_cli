@@ -94,7 +94,7 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
    end 
  end 
    def choice 
-     puts "Would you like to learn more stats about this pokemon,Pokemon list or exit?"
+     puts "Would you like to learn more stats about this pokemon,simulate a Pokemon battle,Pokemon list or exit?"
      puts " stats/list/battle/exit"
      input = gets.strip.downcase 
      if input == "stats"
