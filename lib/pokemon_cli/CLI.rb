@@ -169,6 +169,7 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
    puts ""
    puts "Select 2 pokemon for a battle."
    puts "Select your first Pokemon!"
+   puts "" 
    continue = true
     while continue 
    pokemon_1 = gets.strip.downcase
@@ -178,11 +179,14 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
      end 
    end 
  end 
+ puts ""
    puts "I choose you #{pokemon_1}!!"
    name = pokemon_1
    stat = "base_experience"  
   API.more_data(name,stat)
+  puts ""
    puts "Select your second Pokemon!"
+   puts ""
      continue = true
     while continue
    pokemon_2 = gets.strip.downcase 
@@ -192,21 +196,25 @@ PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
      end 
    end 
  end
+ puts ""
    puts "I choose you #{pokemon_2}!!"
    name = pokemon_2
    stat = "base_experience"
   API.more_data(name,stat)
   if  PokemonCli::CLI.pokemon_battle[0] >  PokemonCli::CLI.pokemon_battle[1]
-    puts "#{pokemon_1} is the winner !!"
+    puts ""
+    puts "#{pokemon_1.upcase} is the winner !!"
     final_choice
   else 
-    puts "#{pokemon_2} is the winner !!"
+    puts ""
+    puts "#{pokemon_2.upcase} is the winner !!"
     final_choice
    
 end
 end
 
 def final_choice 
+  puts ""
      puts "Would you like to continue to battle,return to the pokemon list, or exit?"
     puts "Choose one: battle/list/exit"
     puts ""
