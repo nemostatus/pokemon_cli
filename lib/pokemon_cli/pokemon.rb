@@ -7,6 +7,9 @@ attr_accessor :name,:type,:move,:ability
   def initialize(attr_hash)
     attr_hash.each do |k,v|
       self.send("#{k}=",v) if self.respond_to?("#{k}=")
+      @type =[]
+      @move = [] 
+      @ability = []
   end 
   save 
 end 
@@ -20,20 +23,12 @@ def self.all
   @@all
 end 
 
-def self.find_by_name(name,stat)
+def self.find_by_name(name)
   self.all.select do |x|
      x.name == name
-     case stat 
-     when "moves"
-       x.move = stat 
-       when "types"
-        x.type = stat 
-        when "abilities"
-          x.ability = stat
-        end 
-      end 
+     
 end
  end 
- 
+ end
 
 

@@ -8,6 +8,7 @@ class PokemonCli::CLI
     @@pokemon_battle
   end 
   def start 
+     API.get_data(name =nil,key = "results")
     puts "Welcome pokemon trainer!!"
     puts "To use your pokedex and view a pokemon enter: 'pokedex'."
     puts "To continue on your adventure enter 'exit'."
@@ -33,7 +34,7 @@ def pokemon_list
   puts ""
   puts ""
    
- API.get_data(name =nil,key = "results")
+
   Pokemon.all.each_with_index do |pokemon,index|
       puts "#{index + 1}. #{pokemon.name}"
      end 
@@ -56,9 +57,11 @@ def pokemon_selection
   puts "Which stats would you like to know?"
   stat_list
  input_2 = gets.strip.downcase
- data = API.get_data(input,input_2)
- poke = Pokemon.find_by_name(input,input_2)
-puts poke
+ binding.pry 
+ binding.pry
+
+ 
+
 
 end
 
