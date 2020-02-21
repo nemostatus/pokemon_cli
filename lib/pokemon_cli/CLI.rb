@@ -47,13 +47,14 @@ def pokemon_choice
    puts "Which pokemon would you like to know about?"
 puts "Please enter the name of a pokemon."
 puts ""
-  name = gets.strip.downcase
   
-  pokemon_selection(name)
+  
+pokemon_selection
 end 
 
 
-def pokemon_selection(name)
+def pokemon_selection
+  name = gets.strip.downcase
   puts "Which stats would you like to know?"
   stat_list
  input = gets.strip.downcase
