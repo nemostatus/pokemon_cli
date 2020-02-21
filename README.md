@@ -15,7 +15,7 @@ pokedex ---list of pokemon names----choice shows poke stats----- list or exit
 exit -end                                 
                                           
                                                      
- After selected stats are listed the user is asked if he wants to see more pokemon and stats and is brought back list of pokemon names if yes is selected.                                                    
+                                                 
                                                      
 
 ## Installation
