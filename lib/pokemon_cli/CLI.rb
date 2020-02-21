@@ -37,42 +37,35 @@ def pokemon_list
   Pokemon.all.each_with_index do |pokemon,index|
       puts "#{index + 1}. #{pokemon.name}"
      end 
-    pokemon_stats
+    pokemon_choice
   choice
    end
   
 def pokemon_choice
   puts ""
    puts "Which pokemon would you like to know about?"
-puts "Please enter the name of a pokemon, and the stat you would like to learn about them."
+puts "Please enter the name of a pokemon."
 puts ""
     keep_going = true
       while keep_going
     name = gets.strip.downcase
-  pokemon_selection(name)
+     puts "which stat would you like to learn more about?"
+ stat_list
+  stat = gets.strip.downcase
+  pokemon_selection(name,stat)
 end 
 
-def pokemon_selection(name)
+def pokemon_selection(name,stat)
+ 
   name = Pokemon.find_by_name(name)
   name.each do |poke|
-    API.get_data(name ="#{poke.name}", )
+   Pokemon.all << API.get_data(name ="#{poke.name}")
+ end 
+ end 
     
    
- end 
- end
-   Pokemon.all.each do |x|
-     if name == x.name 
-      
-       keep_going = false 
-   
-      end 
-   end 
- end
- puts ""
-    puts "Which stats would you like to know?"
-    puts "Please enter by keyword."
-   stat_list
-   puts ""
+ 
+
     continue = true
     while continue 
     stat = gets.strip.downcase
