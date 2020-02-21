@@ -1,22 +1,19 @@
 # PokemonCli
 
-Welcome! Thank you for checking out my cli! After all the appropriate gems listed on line 25 (README.md)  are installed and ./bin/executable is entered into the terminal my pokemon CLI will ask you if you would like to view your pokedex. If it's chosen then it will make an API call to the pokeAPI and get the pokemon data, unfortunately the endpoint lists only the pokemon name and pokemon url so it wasn't so easy to get all the attributes of the pokemon. Anyway my CLI then lists all of the pokemon names. Once chosen it then asks which stats you would like to see. I use this information to plug into a 2nd more flexible API call and it lists all of the data accordingly. So basically you are able to choose the pokemon and the specific data you would like. After seeing the Pokemon stats you have the option to learn more about that selected Pokemon, see the Pokemon list again or have some fun and have a virtual Pokemon battle(this battle is determined with Pokemon base experience). I hope you like using my Pokemon CLI. ENJOY!! See the legend starting on line 5(README.md) for more details on Pokemon stats.
+Welcome! Thank you for checking out my cli! After all the appropriate gems listed on line 22 (README.md)  are installed and ./bin/executable is entered into the terminal my pokemon CLI will ask you if you would like to view your pokedex.  My CLI then lists all of the pokemon names. Once chosen it then shows the stats.  So basically you are able to choose the pokemon and the specific data you would like. I hope you like using my Pokemon CLI. ENJOY!! See the legend starting on line 5(README.md) for more details on Pokemon stats.
 
 STAT LEGEND: moves(list of Pokemon moves, moves are used during a turned based battle)
              types(list of Pokemon types, a Pokemon can have more than one type, ex. fire,flying)
-             base experience(This is the experience points gained when this Pokemon is defeated. It is relative to how strong a Pokemon is, the stronger it is the more points the pokemon trainer will earn)
-             weight(measured in hectograms)
-             height(measured in decimetres)
              abilities( Abilities were introduced in Generation III as an all new game mechanic. Each and every Pokémon has an ability, and can only have one at a time)
              
 POKEMON CLI STRUCTURE:
 
-                                          |--- moves
-                                          |--- types 
-                                          |--- base xp
-pokedex ---list of pokemon names- choice -|--- weight-- stats loop/list loop/battle/or exit - loop or exit
-exit -end                                 |--- height
-                                          |--- abilities 
+                           
+                                        
+                                      
+pokedex ---list of pokemon names----choice shows poke stats----- list or exit 
+exit -end                                 
+                                          
                                                      
  After selected stats are listed the user is asked if he wants to see more pokemon and stats and is brought back list of pokemon names if yes is selected.                                                    
                                                      
