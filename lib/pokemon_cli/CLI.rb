@@ -38,7 +38,7 @@ def pokemon_list
       puts "#{index + 1}. #{pokemon.name}"
      end 
     pokemon_choice
-  choice
+
    end
  end
   
@@ -48,14 +48,12 @@ def pokemon_choice
 puts "Please enter the name of a pokemon."
 puts ""
   name = gets.strip.downcase
-     puts "which stat would you like to learn more about?"
- stat_list
-  stat = gets.strip.downcase
-  pokemon_selection(name,stat)
+  
+  pokemon_selection(name)
 end 
 
 
-def pokemon_selection(name,stat)
+def pokemon_selection(name)
  
   name = Pokemon.find_by_name(name)
   name.each do |poke|
