@@ -57,9 +57,10 @@ def pokemon_selection(name)
   puts "Which stats would you like to know?"
   stat_list
  input = gets.strip.downcase
- Pokemon.all << API.get_data(name ="#{poke.name}",stat = "#{input}")
+ Pokemon.find_by_name(name) << API.get_data(name ="#{poke.name}",stat = "#{input}")
+
  end 
- end
+ 
  
     
    
