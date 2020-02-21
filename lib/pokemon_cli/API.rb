@@ -6,8 +6,14 @@ response = RestClient.get("https://pokeapi.co/api/v2/pokemon/")
       Pokemon.new(poke)
 end   
 end
- end  
+  
 def self.get_abilities(name)
-  response = RestClient.get("https://pokeapi.co/api/v2/pokemon/'#{name}'/")
+  response = RestClient.get("https://pokeapi.co/api/v2/pokemon/#{name}/")
   ability_array = JSON.parse(response.body)["abilities"]
-      << ability_array
+Pokemon.find_by_name("#{name}").each do |x| 
+if x == "@ability" 
+  "#{name}".able << ability_array
+end 
+end
+end
+end 

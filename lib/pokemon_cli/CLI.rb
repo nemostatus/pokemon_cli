@@ -57,6 +57,7 @@ def pokemon_selection
   puts "Which stats would you like to know?"
   stat_list
  input_2 = gets.strip.downcase
+ API.get_abilities(input)
  
 
  

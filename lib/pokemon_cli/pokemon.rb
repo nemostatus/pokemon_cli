@@ -13,6 +13,12 @@ attr_accessor :name,:type,:move,:ability
   end 
   save 
 end 
+def able=(able)
+  @able = able 
+end 
+def able 
+  puts @ability 
+end 
 
 
 def save 
