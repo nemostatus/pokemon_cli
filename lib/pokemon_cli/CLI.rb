@@ -46,37 +46,27 @@ def pokemon_choice
    puts "Which pokemon would you like to know about?"
 puts "Please enter the name of a pokemon."
 puts ""
-    keep_going = true
-      while keep_going
-    name = gets.strip.downcase
+  name = gets.strip.downcase
      puts "which stat would you like to learn more about?"
  stat_list
   stat = gets.strip.downcase
   pokemon_selection(name,stat)
 end 
 
+
 def pokemon_selection(name,stat)
  
   name = Pokemon.find_by_name(name)
   name.each do |poke|
    Pokemon.all << API.get_data(name ="#{poke.name}")
- end 
- end 
+ 
     
    
  
 
-    continue = true
-    while continue 
-    stat = gets.strip.downcase
-    PokemonCli::CLI.poke_stats.each do |x|
-      if stat == x
-        continue = false
-      end 
-    end
-  end 
-   API.more_data(name,stat)
-Pokemon.stats.each do |poke|
+    
+
+
     case stat
     when "types"
       puts ""
