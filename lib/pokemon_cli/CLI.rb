@@ -1,5 +1,5 @@
 class PokemonCli::CLI
-  @@poke_stats = [ "abilities","base_experience","weight","height","moves","types"]
+  @@poke_stats = [ "abilities","moves","types"]
   @@pokemon_battle = []
   def self.poke_stats
     @@poke_stats
@@ -32,7 +32,7 @@ end
 def pokemon_list
   puts ""
   puts ""
-   Pokemon.all.clear
+   
  API.get_data(name =nil,key = "results")
   Pokemon.all.each_with_index do |pokemon,index|
       puts "#{index + 1}. #{pokemon.name}"
@@ -57,7 +57,7 @@ def pokemon_selection(name)
   puts "Which stats would you like to know?"
   stat_list
  input = gets.strip.downcase
- Pokemon.find_by_name(name) << API.get_data(name ="#{poke.name}",stat = "#{input}")
+ Pokemon.find_by_name(name) << API.get_data(name ="#{name}",stat ="#{input}")
 
  end 
  
