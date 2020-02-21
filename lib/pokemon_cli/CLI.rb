@@ -1,89 +1,46 @@
 class PokemonCli::CLI
-  @@poke_stats = [ "abilities","moves","types"]
-  @@pokemon_battle = []
-  def self.poke_stats
-    @@poke_stats
-  end
-  def self.pokemon_battle
-    @@pokemon_battle
-  end 
   def start 
-     API.get_names
+    API.get_names
     puts "Welcome pokemon trainer!!"
     puts "To use your pokedex and view a pokemon enter: 'pokedex'."
     puts "To continue on your adventure enter 'exit'."
-   menu
+    menu
   end 
-  
   def menu
     puts ""
     input = gets.strip.downcase
     if input == "pokedex"
-      pokemon_list
-     
-  elsif input == "exit"
-      bye
+      pokemon_list    
+    elsif input == "exit"
+      "Bye"
     else 
-     puts "Invalid entry."
+      puts "Invalid entry."
       menu
+    end 
   end 
-end 
-
-
-def pokemon_list
-  puts ""
-  puts ""
-   
-
-  Pokemon.all.each_with_index do |pokemon,index|
+  def pokemon_list
+    puts ""
+    puts ""
+    Pokemon.all.each_with_index do |pokemon, index|
       puts "#{index + 1}. #{pokemon.name}"
-     end 
+    end 
     pokemon_choice
-
-   end
- end
-  
-def pokemon_choice
-  puts ""
-   puts "Which pokemon would you like to know about?"
-puts "Please enter the name of a pokemon."
-puts ""
-pokemon_selection
-end 
-
-
-def pokemon_selection
-  input = gets.strip.downcase
-  puts "Which stats would you like to know?"
-  stat_list
- input_2 = gets.strip.downcase
- API.get_abilities(input)
- 
-
- 
-
-
+  end
+  def pokemon_choice
+    puts ""
+    puts "Which pokemon would you like to know about?"
+    puts "Please enter the name of a pokemon."
+    puts ""
+    input = gets.strip.downcase
+    pokemon_selection(input)
+  end 
+  def pokemon_selection(input)
+    poke = API.get_details(input)
+    puts "Name: #{poke.name}"
+    puts "Type: #{poke.type}"
+    puts "Abilities: #{poke.ability}"
+    puts "Moves: #{poke.moves}"
+  end
 end
-
-
-
- 
- 
-    
-   
- 
-
-    
-
-
-  
-
- def stat_list
-   puts ""
-PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
-  puts "#{index + 1}. #{stat}"
-end
-end
-
-   
-  
+#need to ask user if they want to know about another pokemon
+#need to create an invalid for an invalid pokemon entry

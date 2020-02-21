@@ -1,19 +1,23 @@
-class API 
- def self.get_names
-response = RestClient.get("https://pokeapi.co/api/v2/pokemon/")
-   pokemon_array = JSON.parse(response.body)["results"]
-   pokemon_array.each do |poke|
-      Pokemon.new(poke)
-end   
-end
-  
-def self.get_abilities(name)
-  response = RestClient.get("https://pokeapi.co/api/v2/pokemon/#{name}/")
-  ability_array = JSON.parse(response.body)["abilities"]
-Pokemon.find_by_name("#{name}").each do |x| 
-if x == "@ability" 
-  "#{name}".able << ability_array
-end 
-end
-end
+class API
+   def self.get_names
+      response = RestClient.get("https://pokeapi.co/api/v2/pokemon/")
+      pokemon_array = JSON.parse(response.body)["results"]
+      pokemon_array.each do |poke|
+         Pokemon.new(poke["name"])
+      end   
+   end
+   def self.get_details(pokemon)
+      response = RestClient.get("https://pokeapi.co/api/v2/pokemon/#{pokemon}")
+      poke = Pokemon.find_by_name(pokemon)[0]
+      moves_array = JSON.parse(response.body)["moves"].map do |move|
+         move["move"]["name"]
+      end 
+      abilities_array = JSON.parse(response.body)["abilities"].map do |ability|
+         ability["ability"]["name"]
+      end 
+      poke.type = JSON.parse(response.body)["types"][0]["type"]["name"]
+      poke.moves = moves_array.join("\n")
+      poke.ability = abilities_array.join("\n") 
+      poke
+   end 
 end 
