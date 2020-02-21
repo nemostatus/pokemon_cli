@@ -57,11 +57,12 @@ def pokemon_selection
   stat_list
  input_2 = gets.strip.downcase
    API.get_data(input,input_2)
-Pokemon.all.each do |x|
-  puts x.move 
+poke = Pokemon.find_by_name(input)
+  poke.each do |x|
+   
+    puts "#{x.move}"
 end
 end
- 
 
 
 
