@@ -21,7 +21,7 @@ end
 
 def self.find_by_name(name)
   self.all.select do |x|
-    x.name == name
+    x.name.downcase == name
  
  end 
 end

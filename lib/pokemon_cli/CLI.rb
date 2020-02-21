@@ -47,21 +47,19 @@ def pokemon_choice
    puts "Which pokemon would you like to know about?"
 puts "Please enter the name of a pokemon."
 puts ""
-  
-  
 pokemon_selection
 end 
 
 
 def pokemon_selection
-  name = gets.strip.downcase
+  input = gets.strip.downcase
   puts "Which stats would you like to know?"
   stat_list
- input = gets.strip.downcase
-   API.get_data(name ="#{name}",stat ="#{input}")
-poke = Pokemon.find_by_name(name ="#{name}") 
- puts poke
- end
+ input_2 = gets.strip.downcase
+   API.get_data(input,input_2)
+poke = Pokemon.find_by_name(input) 
+end
+ 
 
 
 
