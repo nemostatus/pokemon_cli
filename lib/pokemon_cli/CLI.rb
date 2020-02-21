@@ -33,7 +33,7 @@ def pokemon_list
   puts ""
   puts ""
    Pokemon.all.clear
- API.get_data(name,key = "results"
+ API.get_data(name =nil,key = "results")
   Pokemon.all.each_with_index do |pokemon,index|
       puts "#{index + 1}. #{pokemon.name}"
      end 
