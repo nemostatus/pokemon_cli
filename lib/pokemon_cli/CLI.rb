@@ -40,6 +40,7 @@ def pokemon_list
     pokemon_choice
   choice
    end
+ end
   
 def pokemon_choice
   puts ""
@@ -59,6 +60,8 @@ def pokemon_selection(name,stat)
   name = Pokemon.find_by_name(name)
   name.each do |poke|
    Pokemon.all << API.get_data(name ="#{poke.name}")
+ end 
+ end
  
     
    
@@ -73,6 +76,8 @@ def pokemon_selection(name,stat)
    puts ""
 PokemonCli::CLI.poke_stats.each.with_index do |stat,index|
   puts "#{index + 1}. #{stat}"
+end
+end
 
    
   
