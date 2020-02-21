@@ -41,7 +41,7 @@ def pokemon_list
   choice
    end
   
-def pokemon_stats 
+def pokemon_choice
   puts ""
    puts "Which pokemon would you like to know about?"
 puts "Please enter the name of a pokemon."
@@ -49,10 +49,10 @@ puts ""
     keep_going = true
       while keep_going
     name = gets.strip.downcase
-    
-    Pokemon.all.each do |x|
-      if name == x.name 
-   Pokemon.name_selection << name 
+  pokemon_selection(name)
+end 
+  
+   
  end 
  end
    Pokemon.all.each do |x|
