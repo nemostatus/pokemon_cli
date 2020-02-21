@@ -11,6 +11,7 @@ attr_accessor :name,:type,:move,:ability
   save 
 end 
 
+
 def save 
   @@all << self 
 end 
@@ -19,11 +20,18 @@ def self.all
   @@all
 end 
 
-def self.find_by_name(name)
+def self.find_by_name(name,stat)
   self.all.select do |x|
-    x.name == name
- 
- end 
+     x.name == name
+     case stat 
+     when "moves"
+       x.move = stat 
+       when "types"
+        x.type = stat 
+        when "abilities"
+          x.ability = stat
+        end 
+      end 
 end
  end 
  
