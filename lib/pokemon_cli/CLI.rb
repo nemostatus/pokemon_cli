@@ -44,14 +44,19 @@ def pokemon_list
 def pokemon_choice
   puts ""
    puts "Which pokemon would you like to know about?"
-puts "Please enter the name of a pokemon."
+puts "Please enter the name of a pokemon, and the stat you would like to learn about them."
 puts ""
     keep_going = true
       while keep_going
     name = gets.strip.downcase
   pokemon_selection(name)
 end 
-  
+
+def pokemon_selection(name)
+  name = Pokemon.find_by_name(name)
+  name.each do |poke|
+    API.get_data(name ="#{poke.name}", )
+    
    
  end 
  end
