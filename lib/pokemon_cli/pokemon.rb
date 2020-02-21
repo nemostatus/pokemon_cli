@@ -22,9 +22,9 @@ end
 def self.find_by_name(pokemon)
   Pokemon.all.select do |x|
     x.name == pokemon 
-   end 
+ 
  end 
-   
+end
  end 
  
 
