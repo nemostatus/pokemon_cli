@@ -32,8 +32,14 @@ class PokemonCli::CLI
     puts "Please enter the name of a pokemon."
     puts ""
     input = gets.strip.downcase
-    pokemon_selection(input)
+    if Pokemon.find_by_name(input).empty? == false 
+      pokemon_selection(input)
+    else 
+      puts "Invalid entry."
+      pokemon_choice 
+    end 
   end 
+ 
   def pokemon_selection(input)
     poke = API.get_details(input)
     puts "Name: #{poke.name}"
@@ -45,7 +51,7 @@ class PokemonCli::CLI
 end
 def final_choice 
   puts ""
-  puts "Enter 'Pokemon' to view more Pokemon or enter 'exit' to continue on your adventure. "
+  puts "Enter 'pokemon' to view more Pokemon or enter 'exit' to continue on your adventure. "
   input = gets.strip.downcase 
   if input == "pokemon"
    pokemon_list 
