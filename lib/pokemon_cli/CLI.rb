@@ -40,7 +40,19 @@ class PokemonCli::CLI
     puts "Type: #{poke.type}"
     puts "Abilities: #{poke.ability}"
     puts "Moves: #{poke.moves}"
+    final_choice
   end
 end
+def final_choice 
+  puts "Enter 'Pokemon' to view more Pokemon or enter 'exit' to continue on your adventure. "
+  input = gets.strip.downcase 
+  if input == "Pokemon"
+   pokemon_list 
+     elsif input == "exit"
+      puts "Enjoy your adventure and try to catch 'em all!"
+    else 
+      puts "Invalid entry."
+      final_choice
+end 
 #need to ask user if they want to know about another pokemon
 #need to create an invalid for an invalid pokemon entry
