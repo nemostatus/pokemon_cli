@@ -12,7 +12,7 @@ class PokemonCli::CLI
     if input == "pokedex"
       pokemon_list    
     elsif input == "exit"
-      "Bye"
+           puts "Enjoy your adventure and try to catch 'em all!"
     else 
       puts "Invalid entry."
       menu
@@ -39,7 +39,6 @@ class PokemonCli::CLI
       pokemon_choice 
     end 
   end 
- 
   def pokemon_selection(input)
     poke = API.get_details(input)
     puts "Name: #{poke.name}"
