@@ -61,5 +61,3 @@ def final_choice
       final_choice
 end 
 end 
-#need to ask user if they want to know about another pokemon
-#need to create an invalid for an invalid pokemon entry

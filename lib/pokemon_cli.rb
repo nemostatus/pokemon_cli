@@ -4,5 +4,5 @@ require_relative "./pokemon_cli/CLI"
 require_relative "./pokemon_cli/pokemon" 
 require "rest-client"
 require "json"
-require 'pry'
+
 
