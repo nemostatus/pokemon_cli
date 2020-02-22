@@ -44,15 +44,17 @@ class PokemonCli::CLI
   end
 end
 def final_choice 
+  puts ""
   puts "Enter 'Pokemon' to view more Pokemon or enter 'exit' to continue on your adventure. "
   input = gets.strip.downcase 
-  if input == "Pokemon"
+  if input == "pokemon"
    pokemon_list 
      elsif input == "exit"
       puts "Enjoy your adventure and try to catch 'em all!"
     else 
       puts "Invalid entry."
       final_choice
+end 
 end 
 #need to ask user if they want to know about another pokemon
 #need to create an invalid for an invalid pokemon entry
